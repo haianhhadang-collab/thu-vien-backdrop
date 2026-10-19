@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thư viện mẫu Backdrop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="gfonts" rel="stylesheet" href="">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true"></div>
+    <div>
+      <h1>Thư viện mẫu Backdrop</h1>
+      <p><span id="nAll">52</span> mẫu backdrop gốc – chỉnh chữ, đổi màu, gắn logo, xuất SVG / PNG / PowerPoint</p>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="backdrop" class="on">Backdrop <span class="n" id="nB"></span></button>
+    <button role="tab" data-tab="guide">Nguyên tắc thiết kế</button>
+    <button role="tab" data-tab="refs">Nguồn tham khảo</button>
+  </nav>
+</header>
+
+<main>
+  <section id="gallery" class="panel">
+    <div class="filters">
+      <input type="search" id="q" placeholder="Tìm mẫu: tết, cưới, y tế, cà phê…" aria-label="Tìm mẫu">
+      <select id="styleSel" aria-label="Lọc theo phong cách"></select>
+      <span class="count" id="count"></span>
+      <span class="grp-tools"><button type="button" class="btn ghost" id="openAll">Mở tất cả</button><button type="button" class="btn ghost" id="closeAll">Thu gọn tất cả</button></span>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="guide" class="panel doc" hidden></section>
+  <section id="refs" class="panel doc" hidden></section>
+</main>
+
+<!-- Trình chỉnh sửa -->
+<div class="editor" id="editor" hidden>
+  <div class="ed-box" role="dialog" aria-modal="true" aria-labelledby="edTitle">
+    <div class="ed-head">
+      <div>
+        <span class="ed-id" id="edId"></span>
+        <h2 id="edTitle"></h2>
+      </div>
+      <button class="x" id="edClose" aria-label="Đóng">✕</button>
+    </div>
+    <div class="ed-body">
+      <form class="ed-form" id="edForm" autocomplete="off"></form>
+      <div class="ed-preview">
+        <div class="stage" id="stage"></div>
+        <p class="ed-desc" id="edDesc"></p>
+        <div class="ed-actions">
+          <button class="btn primary" id="dlSvg">Tải SVG (vector)</button>
+          <div class="png">
+            <button class="btn" id="dlPng">Tải PNG</button>
+            <select id="pngSize" aria-label="Kích thước PNG"></select>
+          </div>
+          <div class="png">
+            <button class="btn" id="dlPptx">Tải PPTX</button>
+            <select id="pptxMode" aria-label="Kiểu file PowerPoint">
+              <option value="edit" selected>Chữ sửa được trong PowerPoint</option>
+              <option value="image">Ảnh nguyên bản (giống 100 %)</option>
+            </select>
+          </div>
+          <button class="btn ghost" id="reset">Khôi phục mặc định</button>
+        </div>
+        <p class="status" id="status" role="status"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/backdrops.js"></script>
+<script src="js/backdrops2.js"></script>
+<script src="js/backdrops3.js"></script>
+<script src="js/backdrops4.js"></script>
+<script src="js/topics.js"></script>
+<script src="js/content.js"></script>
+<script src="js/studio.js"></script>
+<script src="js/motifs.js"></script>
+<script src="js/motifs2.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Cấu hình máy cục bộ của Claude Code
+.claude/
+
+# Hệ điều hành / trình soạn thảo
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+
+# File xuất thử
+*.pptx
+*.png

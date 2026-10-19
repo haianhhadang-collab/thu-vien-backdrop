@@ -1,0 +1,164 @@
+:root {
+  --bg: #f4f2ee;
+  --card: #ffffff;
+  --ink: #1c1b1f;
+  --muted: #6b6870;
+  --line: #e3dfd8;
+  --accent: #c2410c;
+  --accent-ink: #ffffff;
+  --chip: #ebe7e0;
+  --check: repeating-conic-gradient(#ece9e4 0 25%, #f8f7f5 0 50%) 0 0 / 18px 18px;
+  --radius: 14px;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-size: 15px; line-height: 1.55; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* ---------- Đầu trang ---------- */
+.top { position: sticky; top: 0; z-index: 5; background: rgba(244, 242, 238, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); padding: 14px 24px 0; }
+.brand { display: flex; gap: 14px; align-items: center; max-width: 1280px; margin: 0 auto; }
+.mark { width: 42px; height: 42px; border-radius: 12px; flex: none; background: conic-gradient(from 210deg, #c2410c, #e0b13c, #0d47a1, #c2410c); }
+.brand h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
+.brand p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.tabs { display: flex; gap: 4px; max-width: 1280px; margin: 12px auto 0; overflow-x: auto; scrollbar-width: none; }
+.tabs button { border: 0; background: none; padding: 10px 14px; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.tabs button.on { color: var(--ink); border-color: var(--accent); }
+.tabs .n { font-size: 12px; background: var(--chip); border-radius: 99px; padding: 1px 7px; margin-left: 4px; }
+
+main { max-width: 1280px; margin: 0 auto; padding: 20px 24px 60px; }
+
+/* ---------- Bộ lọc & lưới mẫu ---------- */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.filters input, .filters select { border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+.filters input { flex: 1 1 260px; max-width: 420px; }
+.filters input:focus, .filters select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.filters .count { color: var(--muted); font-size: 13.5px; }
+.empty { grid-column: 1 / -1; color: var(--muted); padding: 30px 0; text-align: center; }
+.meta .topic { font-size: 12px; color: var(--accent); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.chips button { border: 1px solid var(--line); background: var(--card); border-radius: 99px; padding: 6px 14px; cursor: pointer; font-size: 13.5px; }
+.chips button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+.card:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, .08); transform: translateY(-2px); }
+.thumb { cursor: pointer; background: #ddd; }
+.thumb svg { width: 100%; height: auto; display: block; }
+.meta { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.meta h3 { margin: 0; font-size: 15.5px; }
+.meta .id { font-size: 12px; color: var(--muted); font-weight: 600; margin-right: 6px; }
+.meta .use { margin: 0; color: var(--muted); font-size: 13px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tags span { font-size: 11.5px; background: var(--chip); border-radius: 6px; padding: 2px 8px; }
+.meta .btn { margin-top: auto; align-self: flex-start; }
+
+.btn { border: 1px solid var(--line); background: var(--card); padding: 8px 14px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.btn:hover { border-color: #bdb6ab; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; }
+.btn:disabled { opacity: .55; cursor: progress; }
+
+/* ---------- Trình chỉnh sửa ---------- */
+.editor { position: fixed; inset: 0; z-index: 20; background: rgba(20, 18, 24, .55); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.editor[hidden] { display: none; }
+.ed-box { background: var(--bg); border-radius: 18px; width: min(1320px, 100%); max-height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
+.ed-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--card); }
+.ed-head h2 { margin: 0; font-size: 18px; }
+.ed-id { font-size: 12px; color: var(--muted); font-weight: 700; }
+.x { border: 0; background: var(--chip); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+.ed-body { display: grid; grid-template-columns: 340px 1fr; min-height: 0; overflow: hidden; flex: 1; }
+.ed-form { padding: 18px 20px; overflow-y: auto; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; background: var(--card); }
+.ed-form label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.ed-form input[type=text], .ed-form textarea { border: 1px solid var(--line); border-radius: 9px; padding: 8px 10px; background: #fff; color: var(--ink); font-weight: 500; font-size: 14.5px; resize: vertical; }
+.ed-form input[type=text]:focus, .ed-form textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+.ed-form h4 { margin: 8px 0 0; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.colors { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.colors label { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; color: var(--ink); }
+.colors input[type=color] { width: 38px; height: 32px; border: 1px solid var(--line); border-radius: 8px; padding: 2px; background: #fff; cursor: pointer; flex: none; }
+.ed-form .row { flex-direction: row; align-items: center; gap: 8px; color: var(--ink); font-weight: 500; }
+.logo-pick { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.logo-pick img { width: 46px; height: 46px; object-fit: contain; background: var(--check); border-radius: 8px; border: 1px solid var(--line); }
+.hint { font-size: 12.5px; color: var(--muted); margin: 0; font-weight: 400; }
+.ed-preview { padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.stage { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0, 0, 0, .12); background: #fff; }
+.stage svg { width: 100%; height: auto; display: block; }
+.ed-desc { margin: 0; color: var(--muted); font-size: 14px; }
+.ed-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.png { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--card); }
+.png .btn { border: 0; border-radius: 0; }
+.png select { border: 0; border-left: 1px solid var(--line); padding: 0 10px; background: var(--card); }
+.status { margin: 0; font-size: 13.5px; color: var(--accent); min-height: 1.4em; }
+
+/* ---------- Trang hướng dẫn ---------- */
+.doc { max-width: 980px; }
+.doc h2 { font-size: 22px; margin: 34px 0 10px; letter-spacing: -.01em; }
+.doc h2:first-child { margin-top: 6px; }
+.doc h3 { font-size: 16px; margin: 20px 0 6px; }
+.doc p, .doc li { color: #38363c; }
+.doc table { border-collapse: collapse; width: 100%; background: var(--card); border-radius: 12px; overflow: hidden; font-size: 14px; }
+.doc th, .doc td { border-bottom: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+.doc th { background: var(--chip); font-weight: 700; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin: 12px 0; }
+.box.warn { border-left: 4px solid var(--accent); }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.pal .p { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.pal .sw { display: flex; height: 38px; border-radius: 8px; overflow: hidden; margin: 6px 0; }
+.pal .sw span { flex: 1; }
+.pal code, .doc code { font-size: 12px; background: var(--chip); padding: 1px 5px; border-radius: 4px; }
+.fontrow { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: center; }
+.fontrow small { color: var(--muted); display: block; }
+.links { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.links a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
+.links a:hover { border-color: var(--accent); }
+.links a b { display: block; margin-bottom: 2px; }
+.links a span { color: var(--muted); font-size: 13.5px; }
+pre.prompt { white-space: pre-wrap; background: #1f1d24; color: #f3efe8; padding: 14px 16px; border-radius: 12px; font-size: 13.5px; line-height: 1.6; }
+
+@media (max-width: 860px) {
+  .top { padding: 12px 16px 0; }
+  main { padding: 16px 16px 50px; }
+  .grid { grid-template-columns: 1fr; }
+  .editor { padding: 0; }
+  .ed-box { border-radius: 0; height: 100%; }
+  .ed-body { grid-template-columns: 1fr; overflow-y: auto; }
+  .ed-form { border-right: 0; border-bottom: 1px solid var(--line); overflow: visible; }
+  .ed-preview { overflow: visible; order: -1; }
+  .fontrow { grid-template-columns: 1fr; }
+}
+.chips small { opacity: .6; font-size: 11.5px; margin-left: 2px; }
+
+/* ---------- Bảng màu & tùy chọn tự động ---------- */
+.ed-form input[type=range] { width: 100%; accent-color: var(--accent); }
+.ed-form output { float: right; color: var(--ink); font-weight: 700; }
+.ed-form select { border: 1px solid var(--line); border-radius: 9px; padding: 7px 8px; background: #fff; color: var(--ink); font-weight: 500; }
+.ed-form .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ed-form { overflow-x: hidden; }
+.pal-chip { min-width: 0; border: 1px solid var(--line); background: #fff; border-radius: 9px; padding: 4px; cursor: pointer; display: flex; flex-wrap: wrap; gap: 0; overflow: hidden; }
+.pal-chip:hover { border-color: var(--accent); }
+.pal-chip span { flex: 1 0 20%; height: 18px; }
+.pal-chip span:first-child { border-radius: 5px 0 0 5px; } .pal-chip span:nth-child(5) { border-radius: 0 5px 5px 0; }
+.pal-chip em { flex: 1 0 100%; font-style: normal; font-size: 10.5px; color: var(--muted); text-align: left; padding: 3px 2px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gen { display: flex; gap: 8px; align-items: center; }
+.gen input[type=color] { width: 38px; height: 34px; border: 1px solid var(--line); border-radius: 8px; padding: 2px; background: #fff; }
+.gen select { flex: 1; border: 1px solid var(--line); border-radius: 9px; padding: 7px 8px; background: #fff; }
+details summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--muted); margin: 4px 0 8px; }
+#layoutNote { color: var(--accent); }
+
+/* ---------- Nhóm mẫu theo chủ đề (thu gọn / mở rộng) ---------- */
+.grp-tools { margin-left: auto; display: flex; gap: 6px; }
+.grp-tools .btn { padding: 6px 12px; font-size: 13px; }
+.groups { display: flex; flex-direction: column; gap: 14px; }
+.grp { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.grp > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 18px; user-select: none; }
+.grp > summary::-webkit-details-marker { display: none; }
+.grp > summary::before { content: '▸'; font-size: 14px; color: var(--muted); transition: transform .2s; }
+.grp[open] > summary::before { transform: rotate(90deg); }
+.grp-name { font-weight: 700; font-size: 16px; }
+.grp-n { font-size: 12.5px; color: var(--muted); background: var(--chip); border-radius: 99px; padding: 1px 9px; }
+.grp-peek { margin-left: auto; display: flex; gap: 4px; }
+.grp-peek i { width: 18px; height: 18px; border-radius: 5px; border: 1px solid rgba(0,0,0,.08); }
+.grp > .grid { padding: 0 18px 18px; }
+.grp:not([open]):hover { border-color: #bdb6ab; }
