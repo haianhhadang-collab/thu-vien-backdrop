@@ -14,7 +14,7 @@
     del(k) { try { localStorage.removeItem(k); } catch (e) { /* bỏ qua */ } },
   };
 
-  const state = { tab: 'backdrop', filter: 'Tất cả', cur: null, p: null, logo: store.get('bl.logo'), closed: store.get('bl.closed') || [] };
+  const state = { tab: 'backdrop', filter: 'Tất cả', cur: null, p: null, logo: store.get('bl.logo'), photo: store.get('bl.photo'), closed: store.get('bl.closed') || [] };
 
   /* ---------- Giá trị của mẫu ---------- */
   function defaults(t) {
@@ -36,11 +36,13 @@
   function values(t) {
     const p = Object.assign(defaults(t), store.get('bl.v.' + t.id) || {});
     p.logo = state.logo || null;
+    if (t.photo) p.photo = state.photo || null;
     return p;
   }
   function save(t, p) {
     const copy = Object.assign({}, p);
     delete copy.logo;
+    delete copy.photo;
     store.set('bl.v.' + t.id, copy);
   }
   function svgOf(t, p, headScale) {
@@ -192,6 +194,13 @@
       (p.textGrad !== 'none' ? (p.textGrad === 'custom' ? `<div class="two"><label>Màu đầu <input type="color" data-k="textGradA" value="${esc(p.textGradA)}"></label><label>Màu cuối <input type="color" data-k="textGradB" value="${esc(p.textGradB)}"></label></div>` : '') +
         `<label>Áp cho ${sel('textGradTarget', [['title', 'Tiêu đề chính'], ['big', 'Mọi chữ lớn'], ['all', 'Toàn bộ chữ']])}</label>` : '') +
       `<p class="hint">Gradient chữ nhũ vàng / bạc / đồng tạo hiệu ứng kim loại. Khi xuất PowerPoint dạng “chữ sửa được”, chữ gradient được đổi thành màu trung bình.</p>`;
+    if (t.photo) {
+      h += `<h4>${esc(t.photo)}</h4>
+        <div class="logo-pick">${state.photo ? `<img src="${state.photo}" alt="Ảnh đang dùng">` : ''}
+          <label class="btn" style="flex-direction:row;color:var(--ink)">Tải ảnh lên…<input type="file" id="photoFile" accept="image/png,image/jpeg,image/webp" hidden></label>
+          ${state.photo ? '<button type="button" class="btn ghost" id="photoDel">Bỏ ảnh</button>' : ''}</div>
+        <p class="hint">Dùng ảnh chân dung / quốc huy <b>bản chính thức</b>, rõ nét, đúng tỉ lệ. Ảnh tự cắt vừa khung; ảnh dùng chung cho các mẫu có khung ảnh.</p>`;
+    }
     {
       h += `<h4>Logo đơn vị</h4>
         <div class="logo-pick">${state.logo ? `<img src="${state.logo}" alt="Logo đang dùng">` : ''}
@@ -443,10 +452,26 @@
       const out = $(`#edForm output[data-o="${k}"]`);
       if (out) out.textContent = e.target.value + (k === 'bgGradAngle' ? '°' : '%');
       save(state.cur, state.p);
+      if (k === 'motif') {
+        const m = window.BLMotifs.MOTIFS[state.p.motif];
+        if (m && m.defOp != null) state.p.motifOp = m.defOp;
+        if (m && m.defColor) state.p.motifColor = m.defColor;
+        save(state.cur, state.p);
+      }
       if (['textMode', 'motif', 'bgGrad', 'bgGradType', 'textGrad'].includes(k)) buildForm(state.cur);
       drawStage();
     });
     $('#edForm').addEventListener('change', async e => {
+      if (e.target.id === 'photoFile' && e.target.files[0]) {
+        const f = e.target.files[0];
+        if (f.size > 6 * 1024 * 1024) { $('#status').textContent = 'Ảnh lớn hơn 6 MB – hãy nén hoặc thu nhỏ trước.'; return; }
+        state.photo = await blobToDataURL(f);
+        const ok = store.set('bl.photo', state.photo);
+        state.p.photo = state.photo;
+        buildForm(state.cur); drawStage();
+        $('#status').textContent = 'Đã gắn ảnh vào khung.' + (ok ? '' : ' (Ảnh hơi lớn nên không lưu được lâu dài trên trình duyệt.)');
+        return;
+      }
       if (e.target.id !== 'logoFile' || !e.target.files[0]) return;
       const f = e.target.files[0];
       if (f.size > 4 * 1024 * 1024) { $('#status').textContent = 'File logo lớn hơn 4 MB – hãy nén hoặc thu nhỏ trước.'; return; }
@@ -472,6 +497,7 @@
         return;
       }
       if (e.target.closest('#colorDetails summary')) { setTimeout(() => { state.openColors = $('#colorDetails').open; }, 0); return; }
+      if (e.target.id === 'photoDel') { state.photo = null; state.p.photo = null; store.del('bl.photo'); buildForm(state.cur); drawStage(); return; }
       if (e.target.id !== 'logoDel') return;
       state.logo = null; state.p.logo = null; store.del('bl.logo');
       buildForm(state.cur); drawStage();

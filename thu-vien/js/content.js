@@ -41,7 +41,9 @@
 <h3>Chọn mẫu cho hội nghị – hội thảo trang trọng</h3>
 <table>
   <tr><th>Loại sự kiện</th><th>Mẫu nên dùng</th></tr>
-  <tr><td>Đại hội, hội nghị Ban Chấp hành, hội nghị đại biểu, thi đua – khen thưởng</td><td>B02 Đỏ – vàng trống đồng · B53 Đỏ – vàng hoa sen · B62 Trống đồng nâu son · B13 Đại hội Đoàn</td></tr>
+  <tr><td>Đại hội, hội nghị Ban Chấp hành, hội nghị đại biểu, thi đua – khen thưởng</td><td>B71 Đại hội Đảng bộ (cờ Đảng, cờ Tổ quốc) · B02 Đỏ – vàng trống đồng · B53 Đỏ – vàng hoa sen · B62 Trống đồng nâu son · B13 Đại hội Đoàn</td></tr>
+  <tr><td>Ngày lễ lớn: 3/2, 30/4, 19/5, 27/7, 2/9, 22/12, Giỗ Tổ</td><td>B65 Mừng Đảng · B68 Giải phóng miền Nam · B66 Ngày sinh Bác · B70 Tri ân liệt sĩ · B43 Quốc khánh · B69 QĐND · B73 Giỗ Tổ Hùng Vương</td></tr>
+  <tr><td>Sinh hoạt chính trị, học tập chuyên đề, kết nạp đảng viên</td><td>B67 Học tập và làm theo Bác · B75 Lễ kết nạp đảng viên · B76 Đại đoàn kết · B74 Biển đảo</td></tr>
   <tr><td>Hội nghị tổng kết, cán bộ – viên chức, người lao động</td><td>B41 Sóng lụa xanh vàng · B60 Đỏ mận – kem cổ điển · B55 Navy – vàng kim</td></tr>
   <tr><td>Hội thảo khoa học, seminar, bảo vệ luận án</td><td>B01 Navy quả cầu lưới · B54 Học thuật trắng – xanh · B63 Bảng chia cột navy · B59 Khoa học trẻ</td></tr>
   <tr><td>Hội thảo quốc tế, song ngữ, có khách nước ngoài</td><td>B28 Song ngữ có dải logo đồng tổ chức · B56 Địa cầu chấm</td></tr>
@@ -76,9 +78,11 @@ ${pal('Tối giản / sáng tạo', 'Be giấy, đen, một màu nhấn duy nh�
 <p>Nguyên tắc <b>60 – 30 – 10</b>: 60 % màu nền, 30 % màu phụ, 10 % màu nhấn. Chữ trên nền phải đủ tương phản – chữ vàng nhạt trên nền vàng, hoặc chữ đỏ trên nền xanh lá sẽ rất khó đọc từ xa.</p>
 
 <h2>5. Họa tiết, hoa văn và gradient</h2>
-<p>Trong trình chỉnh sửa, mục <b>Họa tiết – hoa văn</b> có 31 loại, xếp mục “Gợi ý” theo chủ đề của mẫu:</p>
+<p>Trong trình chỉnh sửa, mục <b>Họa tiết – hoa văn</b> có 43 loại, xếp mục “Gợi ý” theo chủ đề của mẫu:</p>
 <table>
   <tr><th>Nhóm</th><th>Họa tiết</th><th>Hợp với</th></tr>
+  <tr><td>Chính trị – lịch sử</td><td>Cờ Đảng – cờ Tổ quốc tung bay, cờ Tổ quốc, sao vàng tỏa sáng, búa liềm (chìm), dải lụa đỏ – vàng, bản đồ Việt Nam (có Hoàng Sa, Trường Sa), Lăng Chủ tịch Hồ Chí Minh, Cột cờ Hà Nội, nhà sàn Bác Hồ</td><td>Đại hội, kỷ niệm ngày lễ lớn, sinh hoạt chính trị, học tập chuyên đề</td></tr>
+  <tr><td>Văn hóa – di sản</td><td>Khuê Văn Các, Chùa Một Cột, lũy tre làng</td><td>Hội thảo lịch sử – văn hóa, khuyến học, lễ hội truyền thống</td></tr>
   <tr><td>Truyền thống Việt</td><td>Trống đồng Đông Sơn, chim Lạc bay, mây tường vân, hoa văn triện (chữ công), hoa thị (cửa sổ cổ), vảy cá – ngói âm dương, hoa sen, cành mai, cành đào, sóng nước, đồng tiền vàng</td><td>Hội nghị trang trọng, Tết, lễ hội văn hóa, Vu Lan, cưới hỏi</td></tr>
   <tr><td>Lễ hội – tiệc</td><td>Quạt Art Deco, pháo hoa, dây đèn lấp lánh, chùm bóng bay, sao lấp lánh, hoa giấy, nốt nhạc bay</td><td>Gala, tất niên, vinh danh, khai trương, sinh nhật, đêm nhạc</td></tr>
   <tr><td>Hiện đại – công nghệ</td><td>Lưới công nghệ, mạch điện tử, bánh răng, tổ ong lục giác, tam giác hình học, lưới mắt cáo, chấm bi bán sắc, tia nắng tỏa, sóng lụa mềm</td><td>Ra mắt sản phẩm, STEM, hội thảo, việc làm</td></tr>

@@ -278,6 +278,28 @@
       T('LOGO', x, y + size * 0.08, { size: size * 0.22, fill: c, font: 'Montserrat', weight: 700, ls: 1, noScale: true, attrs: 'data-deco="1"' }) + '</g>';
   }
 
+  /* Khung ảnh (chân dung, quốc huy…): ảnh người dùng tải lên hoặc khung chờ.
+   * o: {shape: 'oval' | 'arch' | 'rect', color, label, id} */
+  function photoSlot(p, cx, cy, w, h, o) {
+    o = o || {};
+    const c = o.color || '#E9C46A', id = o.id || 'ph', x0 = cx - w / 2, y0 = cy - h / 2;
+    const shape = (W, H, attrs) => {
+      const x = cx - W / 2, y = cy - H / 2;
+      if (o.shape === 'rect') return `<rect x="${r2(x)}" y="${r2(y)}" width="${r2(W)}" height="${r2(H)}" rx="${r2(W * 0.04)}" ${attrs}/>`;
+      if (o.shape === 'arch') return `<path d="M ${r2(x)} ${r2(y + H)} V ${r2(y + W / 2)} A ${r2(W / 2)} ${r2(W / 2)} 0 0 1 ${r2(x + W)} ${r2(y + W / 2)} V ${r2(y + H)} Z" ${attrs}/>`;
+      return `<ellipse cx="${r2(cx)}" cy="${r2(cy)}" rx="${r2(W / 2)}" ry="${r2(H / 2)}" ${attrs}/>`;
+    };
+    const frame = shape(w, h, `fill="none" stroke="${c}" stroke-width="4"`) + shape(w + 22, h + 22, `fill="none" stroke="${c}" stroke-width="1.5"`);
+    if (p.photo) {
+      return `<defs><clipPath id="${id}">${shape(w, h, '')}</clipPath></defs>` +
+        `<image href="${p.photo}" xlink:href="${p.photo}" x="${r2(x0)}" y="${r2(y0)}" width="${r2(w)}" height="${r2(h)}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` + frame;
+    }
+    const lines = String(o.label || 'ẢNH CHÂN DUNG').split('\n');
+    return shape(w, h, `fill="#ffffff" fill-opacity="0.08" stroke="${c}" stroke-width="2" stroke-dasharray="8 6"`) + shape(w + 22, h + 22, `fill="none" stroke="${c}" stroke-width="1.5"`) +
+      lines.map((l, i) => T(l, cx, cy - (lines.length - 1) * 12 + i * 24, { size: 17, weight: 700, fill: c, ls: 1, noScale: true, maxW: w * 0.85, attrs: 'data-deco="1"' })).join('') +
+      T('(tải ảnh lên trong trình chỉnh sửa)', cx, cy + lines.length * 12 + 18, { size: 12, weight: 500, fill: c, noScale: true, maxW: w * 0.85, attrs: 'data-deco="1" fill-opacity="0.8"' });
+  }
+
   function svgDoc(w, h, body) {
     return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">${body}</svg>`;
   }
@@ -285,7 +307,7 @@
   root.BL = {
     FONTS, fontsUrl, esc, r2, rad, mix, shade, tint, hex2rgb, rng,
     textW, fitSize, T, TL, setRO, headScale, arcText, arcPath, starPts, star, laurel, ribbon, drum, flower, leaf,
-    logoSlot, svgDoc,
+    logoSlot, photoSlot, svgDoc,
     templates: [],
   };
 })(typeof window !== 'undefined' ? window : globalThis);
