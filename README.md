@@ -1,10 +1,12 @@
 # Thư viện mẫu Backdrop
 
+**Dùng trực tuyến:** https://haianhhadang-collab.github.io/thu-vien-backdrop/ (không cần cài đặt, mở bằng Chrome / Edge).
+
 Bộ **52 mẫu backdrop gốc** dùng làm ví dụ khi thiết kế backdrop sự kiện. Mọi mẫu đều vẽ bằng vector (SVG), chữ dùng phông Google Fonts có hỗ trợ tiếng Việt, nên chỉnh sửa và in khổ lớn thoải mái.
 
 ## Cách dùng
 
-1. Mở `thu-vien/index.html` bằng Chrome hoặc Edge (cần mạng để tải phông chữ và thư viện PowerPoint).
+1. Mở link trên, hoặc mở `thu-vien/index.html` trên máy bằng Chrome hoặc Edge (cần mạng để tải phông chữ và thư viện PowerPoint).
 2. Mẫu được **xếp theo chủ đề**; bấm tên chủ đề để thu gọn / mở rộng (nút **Mở tất cả / Thu gọn tất cả**, trạng thái được ghi nhớ). Có thể lọc theo chủ đề (nút bấm), **phong cách** (ô chọn) hoặc gõ từ khóa vào ô tìm kiếm (không cần gõ dấu: "tet", "cuoi", "y te"…).
 3. Bấm vào mẫu để sửa chữ, đổi màu và tải logo đơn vị lên.
 4. Xuất file:
