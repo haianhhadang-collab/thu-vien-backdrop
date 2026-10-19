@@ -2,7 +2,7 @@
 
 **Dùng trực tuyến:** https://haianhhadang-collab.github.io/thu-vien-backdrop/ (không cần cài đặt, mở bằng Chrome / Edge).
 
-Bộ **52 mẫu backdrop gốc** dùng làm ví dụ khi thiết kế backdrop sự kiện. Mọi mẫu đều vẽ bằng vector (SVG), chữ dùng phông Google Fonts có hỗ trợ tiếng Việt, nên chỉnh sửa và in khổ lớn thoải mái.
+Bộ **64 mẫu backdrop gốc** dùng làm ví dụ khi thiết kế backdrop sự kiện. Mọi mẫu đều vẽ bằng vector (SVG), chữ dùng phông Google Fonts có hỗ trợ tiếng Việt, nên chỉnh sửa và in khổ lớn thoải mái.
 
 ## Cách dùng
 
@@ -47,7 +47,7 @@ Bộ **52 mẫu backdrop gốc** dùng làm ví dụ khi thiết kế backdrop s
 
 | Chủ đề | Mẫu |
 |---|---|
-| Hội nghị – hội thảo | B01 Hội thảo khoa học navy · B02 Hội nghị đỏ – vàng · B17 Hội nghị y khoa · B20 Tri ân khách hàng xanh ngọc – vàng · B28 Hội thảo quốc tế song ngữ · B40 Mùa vàng – ruộng bậc thang · B41 Tổng kết năm sóng lụa · B52 Talkshow – tọa đàm |
+| Hội nghị – hội thảo (20 mẫu) | B01 Hội thảo khoa học navy · B02 Hội nghị đỏ – vàng · B17 Hội nghị y khoa · B20 Tri ân khách hàng xanh ngọc – vàng · B28 Hội thảo quốc tế song ngữ · B40 Mùa vàng – ruộng bậc thang · B41 Tổng kết năm sóng lụa · B52 Talkshow – tọa đàm · B53 Đỏ – vàng hoa sen · B54 Học thuật trắng – xanh · B55 Navy – vàng kim khung kép · B56 Quốc tế – địa cầu chấm · B57 Mảng chéo đỏ đô · B58 Diễn đàn – tia sáng sân khấu · B59 Khoa học trẻ – phân tử · B60 Đỏ mận – kem cổ điển · B61 Giáo dục lục bảo – sách mở · B62 Trống đồng nâu son · B63 Bảng chia cột navy · B64 Xúc tiến đầu tư |
 | Lễ hội – văn hóa | B04 Tết – Xuân · B14 Trung thu đêm trăng · B15 Giáng sinh · B16 Lễ hội ẩm thực – hội chợ · B25 Văn hóa đọc · B33 Vu Lan báo hiếu · B34 Halloween hóa trang · B35 Lễ hội biển · B39 Hội xuân hoa đào · B43 Mừng Quốc khánh 2/9 · B47 Lễ hội đèn lồng phố cổ |
 | Giáo dục | B05 Khai giảng · B06 Tốt nghiệp · B10 Tri ân thầy cô 20/11 · B27 Ngày hội thiếu nhi cầu vồng · B32 Ngày hội STEM – robotics · B44 Thông báo tuyển sinh · B50 Ngày hội Tiếng Anh |
 | Tiệc – lễ kỷ niệm | B03 Year End Party đen – vàng · B07 Kỷ niệm năm thành lập · B30 Lễ vinh danh – trao giải |
@@ -61,13 +61,13 @@ Bộ **52 mẫu backdrop gốc** dùng làm ví dụ khi thiết kế backdrop s
 
 - `thu-vien/`: trang thư viện và trình chỉnh sửa (`index.html`, `style.css`, `js/`).
   - `js/core.js`: các hàm vẽ dùng chung (chữ tự co cho vừa khung, nguyệt quế, ruy băng, trống đồng, hoa lá…).
-  - `js/backdrops.js`, `js/backdrops2.js`, `js/backdrops3.js`, `js/backdrops4.js`: định nghĩa từng mẫu. Muốn thêm mẫu thì chép một khối `add({...})` rồi sửa.
+  - `js/backdrops.js`, `js/backdrops2.js`, `js/backdrops3.js`, `js/backdrops4.js`, `js/backdrops5.js`: định nghĩa từng mẫu. Muốn thêm mẫu thì chép một khối `add({...})` rồi sửa.
   - `js/studio.js`: tự căn bố cục, hiệu ứng tự động, bảng màu.
   - `js/motifs.js`, `js/motifs2.js`: họa tiết – hoa văn theo chủ đề, gradient nền và gradient chữ.
   - `js/app.js`: giao diện, xuất SVG / PNG / PPTX (thư viện PptxGenJS tải từ jsDelivr khi bấm "Tải PPTX").
   - `js/topics.js`: gán chủ đề cho các mẫu đời đầu và sắp xếp theo mã.
   - `js/content.js`: nội dung tab hướng dẫn và nguồn tham khảo.
-- `mau-svg/backdrop/`: 52 file SVG xuất sẵn với nội dung mẫu. Chạy lại bằng lệnh `node thu-vien/xuat-svg.js`.
+- `mau-svg/backdrop/`: 64 file SVG xuất sẵn với nội dung mẫu. Chạy lại bằng lệnh `node thu-vien/xuat-svg.js`.
 - `luu-tru-logo/`: 24 mẫu logo đã gỡ khỏi thư viện (mã nguồn `js/logos.js`, `js/logos2.js` và các file SVG), giữ lại phòng khi cần dùng lại.
 
 ## Nhờ Claude làm theo mẫu

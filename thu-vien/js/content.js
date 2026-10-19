@@ -32,11 +32,23 @@
 <div class="box warn"><b>Vùng an toàn:</b> chừa 5–10 % mỗi mép. Khoảng 1/5 phía dưới thường bị bục phát biểu, bàn chủ tọa, lẵng hoa che – không đặt tiêu đề ở đó. Nếu biết vị trí bục (thường lệch trái hoặc phải), tránh đặt chữ quan trọng phía sau bục.</div>
 <h3>Ba kiểu bố cục dùng trong thư viện</h3>
 <ul>
-  <li><b>Đối xứng giữa</b> (B02, B03, B04, B05, B08, B13, B14, B16, B19, B21, B25, B27, B29, B30, B33, B35, B37, B38, B39, B41, B43, B45, B47, B49): trang trọng, dễ cân đối – hợp hội nghị, lễ, tiệc.</li>
-  <li><b>Căn trái + hình minh họa bên phải</b> (B01, B06, B09, B11, B12, B15, B17, B18, B22, B23, B24, B26, B28, B32, B34, B36, B40, B44, B46, B48, B50, B51, B52): hiện đại, chừa chỗ cho hình ảnh, đọc nhanh.</li>
-  <li><b>Hai cột / hai bên</b> (B07, B10, B42 – ký kết có logo hai bên): một bên là con số / hình lớn, bên kia là chữ – hợp lễ kỷ niệm, tri ân.</li>
+  <li><b>Đối xứng giữa</b> (B02, B03, B04, B05, B08, B13, B14, B16, B19, B21, B25, B27, B29, B30, B33, B35, B37, B38, B39, B41, B43, B45, B47, B49, B53, B54, B55, B58, B60, B61, B62, B64): trang trọng, dễ cân đối – hợp hội nghị, lễ, tiệc.</li>
+  <li><b>Căn trái + hình minh họa bên phải</b> (B01, B06, B09, B11, B12, B15, B17, B18, B22, B23, B24, B26, B28, B32, B34, B36, B40, B44, B46, B48, B50, B51, B52, B56, B57, B59): hiện đại, chừa chỗ cho hình ảnh, đọc nhanh.</li>
+  <li><b>Hai cột / hai bên</b> (B07, B10, B42 – ký kết có logo hai bên, B63 – cột navy chứa logo và thời gian): một bên là con số / hình lớn, bên kia là chữ – hợp lễ kỷ niệm, tri ân.</li>
   <li><b>Khung vòm / huy hiệu trung tâm</b> (B20, B31): nội dung nằm trong cổng vòm hoặc huy hiệu tròn – hợp gala, khai trương.</li>
 </ul>
+
+<h3>Chọn mẫu cho hội nghị – hội thảo trang trọng</h3>
+<table>
+  <tr><th>Loại sự kiện</th><th>Mẫu nên dùng</th></tr>
+  <tr><td>Đại hội, hội nghị Ban Chấp hành, hội nghị đại biểu, thi đua – khen thưởng</td><td>B02 Đỏ – vàng trống đồng · B53 Đỏ – vàng hoa sen · B62 Trống đồng nâu son · B13 Đại hội Đoàn</td></tr>
+  <tr><td>Hội nghị tổng kết, cán bộ – viên chức, người lao động</td><td>B41 Sóng lụa xanh vàng · B60 Đỏ mận – kem cổ điển · B55 Navy – vàng kim</td></tr>
+  <tr><td>Hội thảo khoa học, seminar, bảo vệ luận án</td><td>B01 Navy quả cầu lưới · B54 Học thuật trắng – xanh · B63 Bảng chia cột navy · B59 Khoa học trẻ</td></tr>
+  <tr><td>Hội thảo quốc tế, song ngữ, có khách nước ngoài</td><td>B28 Song ngữ có dải logo đồng tổ chức · B56 Địa cầu chấm</td></tr>
+  <tr><td>Hội nghị ngành giáo dục, y tế</td><td>B61 Giáo dục lục bảo · B17 Hội nghị y khoa</td></tr>
+  <tr><td>Diễn đàn lớn, chiếu màn LED</td><td>B58 Diễn đàn – tia sáng sân khấu · B09 Ra mắt sản phẩm</td></tr>
+  <tr><td>Doanh nghiệp: đối thoại, cổ đông, xúc tiến đầu tư, ký kết</td><td>B57 Mảng chéo đỏ đô · B36 Đại hội cổ đông · B64 Xúc tiến đầu tư · B42 Ký kết hợp tác · B20 Tri ân khách hàng</td></tr>
+</table>
 
 <h2>3. Phông chữ hỗ trợ tiếng Việt (miễn phí, dùng thương mại được)</h2>
 ${font('Be Vietnam Pro', 800, 'HỘI NGHỊ TỔNG KẾT', 'Chữ không chân, đọc rõ dấu – dùng cho mọi tiêu đề')}

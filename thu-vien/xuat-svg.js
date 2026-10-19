@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const here = __dirname;
-['core.js', 'backdrops.js', 'backdrops2.js', 'backdrops3.js', 'backdrops4.js', 'topics.js'].forEach(f => require(path.join(here, 'js', f)));
+['core.js', 'backdrops.js', 'backdrops2.js', 'backdrops3.js', 'backdrops4.js', 'backdrops5.js', 'topics.js'].forEach(f => require(path.join(here, 'js', f)));
 const BL = globalThis.BL;
 
 const slug = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D')

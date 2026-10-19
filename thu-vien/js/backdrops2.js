@@ -40,11 +40,12 @@
   const person = (x, y, s, fill, op) => `<g fill="${fill}" opacity="${op == null ? 1 : op}"><circle cx="${r2(x)}" cy="${r2(y - s * 0.95)}" r="${r2(s * 0.36)}"/>` +
     `<path d="M ${r2(x - s * 0.62)} ${r2(y + s * 0.6)} V ${r2(y - s * 0.1)} Q ${r2(x - s * 0.62)} ${r2(y - s * 0.5)} ${r2(x)} ${r2(y - s * 0.5)} Q ${r2(x + s * 0.62)} ${r2(y - s * 0.5)} ${r2(x + s * 0.62)} ${r2(y - s * 0.1)} V ${r2(y + s * 0.6)} Z"/></g>`;
   /* Tiêu đề chạy màu cầu vồng từng chữ */
+  let rainbowN = 0;
   function rainbowTitle(text, x, y, o, colors, lh) {
     const lines = String(text || '').toUpperCase().split(/\r?\n/).map(s => s.trim()).filter(Boolean);
     if (!lines.length) return { svg: '', h: 0 };
     const fam = o.font || 'Be Vietnam Pro', wt = o.weight || 900;
-    const s = Math.min.apply(null, lines.map(l => fitSize(l, o.size * root.BL.headScale(), o.maxW, fam, wt, 0))), blk = 'r' + Math.random().toString(36).slice(2, 8);
+    const s = Math.min.apply(null, lines.map(l => fitSize(l, o.size * root.BL.headScale(), o.maxW, fam, wt, 0))), blk = 'r' + (++rainbowN);
     let k = 0;
     const svg = lines.map((l, i) => `<text x="${x}" y="${r2(y + i * s * lh)}" font-family="'${fam}', sans-serif" font-size="${r2(s)}" font-weight="${wt}" text-anchor="middle" stroke="#fff" stroke-width="${r2(s * 0.14)}" paint-order="stroke" stroke-linejoin="round" data-blk="${blk}">` +
       Array.from(l).map(ch => ch === ' ' ? ' ' : `<tspan fill="${colors[(k++) % colors.length]}">${esc(ch)}</tspan>`).join('') + '</text>').join('');
